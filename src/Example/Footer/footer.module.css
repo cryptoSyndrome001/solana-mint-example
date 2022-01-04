@@ -1,0 +1,36 @@
+.container {
+  background: black;
+  position: relative;
+}
+
+.socialIconsDiv {
+  position: absolute;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+  z-index: 100;
+}
+
+#faq img {
+  max-width: calc(100% - 50px);
+}
+
+@media (max-width: 768px) {
+  .socialIconsDiv {
+    top: 0px;
+  }
+
+  .socialIconsDiv svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}

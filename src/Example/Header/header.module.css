@@ -1,0 +1,354 @@
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1280px;
+    height: 100%;
+}
+
+.intro {
+    padding: 0;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+}
+
+.intro::before {
+    content: "";
+    background: url("../../Assets/background.jpg");
+    /* margin-top: -160px; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+}
+
+.banner {
+    background-color: white;
+    min-height: 30vh;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* .mintedButton{
+    background-image: linear-gradient(to right, blue , lightblue);
+    outline: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    width: 400px;
+    min-height: 100px;
+  } */
+
+.headerButtonSection {
+    min-height: 25vh;
+    background: var(--primary-background1);
+    padding: 60px 0px;
+    overflow: hidden !important;
+    width: auto !important;
+    color: white !important;
+}
+
+.headerButtonSection button:nth-child(n+1) {
+    width: 250px;
+}
+
+.connectDiv {
+    text-align: center;
+}
+
+.connectDiv button {
+    padding: 10px 20px;
+    /* background-image: linear-gradient(to right,blue,lightblue);
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; */
+    margin-bottom: 40px;
+}
+
+.counter {
+    background: lightblue;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 130px;
+    padding: 5px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.counterButton {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 0px 6px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scrollDown {}
+
+.scrollDown::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 100%;
+    margin-left: 8px;
+    -webkit-animation: scrollAnimate 1.5s ease;
+    animation: scrollAnimate 1.5s ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.ulClass {
+    display: none;
+}
+
+.heroTitle {
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0px;
+    color: #fff;
+    font-weight: 100;
+}
+
+.heroContent {
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.heroTitle span {
+    font-weight: 200;
+}
+
+.pandaHeadingDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mintDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mintDiv button {
+    width: 160px;
+    height: 50px;
+    background-color: rgb(19, 194, 19);
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.what {
+    /* padding: 100px 0; */
+    /* background: #74becb; */
+    background: rgb(41, 39, 39);
+    text-align: center;
+    padding: 100px 0 170px;
+}
+
+.divText {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.aboutText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 1px solid #fff9;
+    padding: 30px 30px 10px;
+    margin: 0 20px;
+}
+
+.pandaImg {
+    display: block;
+    margin: auto;
+}
+
+.pandaImg img {
+    margin-top: 40px;
+    max-width: 480px;
+    width: 360px;
+    height: 550px;
+    object-fit: contain;
+}
+
+.row {
+    padding-top: 10px;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+p {
+    color: #eee;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+}
+
+h2 {
+    /* margin: 0; */
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    font-size: 42px;
+}
+
+.discord {
+    display: block;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.discord a {
+    background: rgb(48, 184, 225) !important;
+    line-height: 1.42857143;
+    text-decoration: none;
+    /* border-radius: 50px; */
+    color: white;
+    font-family: Sora, sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #fb5f60;
+    padding: 14px 34px !important;
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    border-radius: 25px !important;
+    transition: all 0.5s linear;
+}
+
+
+/* @media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+} */
+
+@keyframes scrollAnimate {
+    from {
+        opacity: 0;
+        margin-top: 0;
+    }
+    to {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        /* margin-top: 120px; */
+        /* padding: 20px; */
+    }
+    .heroTitle {
+        font-size: 48px;
+    }
+    .intro {
+        padding: 0;
+        background: rgba(0, 0, 0, 0.6);
+        height: 100%;
+    }
+    .intro::before {
+        content: "";
+        background: url("../../Assets/background.jpg");
+        /* margin-top: -160px; */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    .ulClass {
+        display: flex !important;
+        flex-direction: column;
+        margin-top: 60px;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 20px;
+    }
+    .anchorClass {
+        color: black !important;
+        font-size: 28px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    .pandaHeadingDiv p {
+        font-size: 30px;
+    }
+    .pandaImg img {
+        max-width: calc(100% - 30px);
+    }
+    .divText {
+        width: auto;
+        max-width: calc(100% - 30px);
+    }
+}
+
+@media (max-width: 340px) {
+    .pandaHeadingDiv p {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .heroTitle {
+        font-size: 36px;
+    }
+}
