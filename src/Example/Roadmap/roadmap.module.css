@@ -1,0 +1,282 @@
+.bgGradient {
+    background: var(--primary-background1);
+    position: relative;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+}
+
+.container:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: 2;
+    background-image: url("https://www.lazylionsnft.com/lion_paws.png"), url("https://www.lazylionsnft.com/lion_paws.png"), url("https://www.lazylionsnft.com/lion_paws.png"), url("https://www.lazylionsnft.com/lion_paws.png");
+    background-repeat: no-repeat;
+    background-position: top 15% right, top 20% left, bottom 10% right, bottom 5% left;
+    background-size: 15%;
+}
+
+.roadMapDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.roadMapPercent {
+    font-size: 160px;
+    margin: 0;
+    font-weight: 100;
+    padding-bottom: 20px;
+}
+
+.roadMapPercentP {
+    font-size: 50px;
+    margin: 0;
+    font-weight: 100;
+}
+
+.roadMapDiv>div {
+    width: 40px;
+    background-color: white;
+    height: 4px;
+}
+
+.roadMapDiv span {
+    font-size: 60px;
+    color: white;
+    padding: 0 20px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.roadmapSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.roadmapSection>span:nth-child(1) {
+    font-size: 24px;
+    color: white;
+}
+
+.roadmapSection>span:nth-child(2) {
+    color: white;
+    font-size: 16px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.roadmapSection>div {
+    margin-top: 4px;
+    height: 50px;
+    width: 7px;
+    background: white;
+}
+
+.roadMapContainer {
+    background: black;
+    padding: 120px 0px;
+}
+
+.rcomponent {
+    display: flex;
+    height: 20px;
+    transform: translate(-18px, 0px);
+}
+
+.roadmapTitle {
+    font-size: 70px;
+    color: #fff;
+    margin: 0;
+    padding: 0 30px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    background: -webkit-linear-gradient(0deg, #40ff56 0%, #3b0aff 24%, #969aff 58%, #a816b5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg) translate(-5px, 0);
+    border: 1px solid white;
+    background-color: #000 !important;
+}
+
+.square2 {
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg) translate(2px, -6px);
+    border: 1px solid white;
+    background-color: #000 !important;
+}
+
+.linkline {
+    width: 70px;
+    height: 1px;
+    background: white;
+    align-items: center;
+    transform: translate(4px, 17px);
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 6px;
+    transform: translate(2px, 12px);
+}
+
+.roadmapStep {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    max-width: 80%;
+    margin: 200px auto 0;
+}
+
+.imgSection {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.roadMapInfo span {
+    margin-top: 20px;
+}
+
+.textSection {
+    margin-right: 60px;
+    /* float: right; */
+    /* text-align: right; */
+    font-size: 22px;
+    line-height: 2.4rem;
+    font-weight: 200;
+    display: flex;
+}
+
+.imageSection {
+    display: flex;
+}
+
+.imageSection>* {
+    margin: auto;
+}
+
+.textSection>span {
+    margin: auto;
+    display: block;
+
+}
+
+.reverse .rcomponent {
+    transform: translate(16px, 0px);
+}
+
+.reverse .textSection>div {
+    margin-right: 0;
+    margin-left: 60px;
+    /* float: left; */
+    text-align: left;
+}
+
+.reverse .circle {
+    transform: translate(8px, 12px);
+}
+
+.colmd5 {
+    width: 41.66%;
+}
+
+@media (max-width: 1040px) {
+    .roadmapStep {
+        max-width: 80%;
+    }
+
+    .colmd5 {
+        max-width: 90%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .roadmapTitle {
+        font-size: 48px;
+        padding: 0;
+    }
+
+    .roadmapSection>span:nth-child(2) {
+        width: 80%;
+    }
+
+    .roadmapStep {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .roadmapStep>div {
+        max-width: 100%;
+        padding: 50px 0 0;
+        width: auto;
+    }
+
+    .roadMapPercent {
+        font-size: 110px;
+    }
+
+    /* .roadmapStep:nth-child(2n-1) {
+        flex-direction: column-reverse;
+    } */
+
+    .roadmapStep>div:last-child {
+        border: none;
+    }
+
+    .rcomponent {
+        display: none;
+    }
+
+    .textSection>div {
+        margin: auto;
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .reverse .textSection>div {
+        margin: auto;
+        max-width: 100%;
+    }
+
+    .colReverse {
+        flex-direction: column-reverse;
+    }
+
+    .textSection>span {
+        font-size: 18px;
+    }
+
+    .textSection {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .textSection>span {
+        font-size: 15px;
+    }
+}

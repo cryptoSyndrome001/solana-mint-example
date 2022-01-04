@@ -13,7 +13,7 @@ const Header = () => {
       >
         <div className={classes.container}>
           <div className={classes.pandaHeadingDiv}>
-            <p style={{ color: 'white' }}>City Mine</p>
+            <p style={{ color: 'white' }}>Example</p>
             <div className={classes.mintDiv}>
               <button>MINT</button>
             </div>
