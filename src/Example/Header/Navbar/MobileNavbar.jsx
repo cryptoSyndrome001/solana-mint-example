@@ -31,7 +31,7 @@ const MobileNavbar = ({ isOpen, toggleDrawer, connectwallettext }) => {
       >
         <div className={classes.mobNav} ref={navRef} id='menu'>
           <div>
-            <img src='/logo.svg' width='60px' height='60px' alt='' />
+            <img src='/logo.png' width='60px' height='60px' alt='' />
           </div>
           <div onClick={toggleDrawer}>
             <svg width="30" height="20" viewBox="0 0 35 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@ const MobileNavbar = ({ isOpen, toggleDrawer, connectwallettext }) => {
         >
           <div className={classes.mobileLogoDiv} ref={navRef} id='menu'>
             <div className={classes.lgLft}>
-              <img src='/logo.svg' width='50px' height='50px' alt='' />
+              <img src='/logo.png' width='50px' height='50px' alt='' />
             </div>
           </div>
 

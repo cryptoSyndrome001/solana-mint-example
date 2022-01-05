@@ -13,7 +13,7 @@ import {
   getSolletWallet,
   getSolletExtensionWallet,
 } from '@solana/wallet-adapter-wallets';
-import { ConfettiProvider } from './Example/Confetti';
+import { ConfettiProvider } from './Components/Confetti';
 
 import {
   ConnectionProvider,

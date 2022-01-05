@@ -45,7 +45,7 @@ const Navbar = () => {
               className='navbar-brand text-center md:text-left page-scroll'
               href='#'
             >
-              <img src='/logo.svg' className="logo" alt='' />
+              <img src='/logo.png' className="logo" alt='' />
             </a>
             <ul
               className={`${classes.ulClass} nav navbar-nav navbar-right flex items-center justify-between `}
