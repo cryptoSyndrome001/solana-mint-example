@@ -56,3 +56,25 @@ li {
 .content-text {
   font-size: 1rem;
 }
+
+.mint-button {
+  border: none !important;
+  border-radius: 0 !important;
+  width: 270px !important;
+  padding: 8px 0 !important;
+  height: auto !important;
+  letter-spacing: 5px !important;
+  text-transform: uppercase !important;
+  font-size: 2rem !important;
+  color: #fff !important;
+  background: #1aa61e !important;
+  margin-top: 15px !important;
+  transition: all 0.3s;
+}
+
+.mint-button:hover {
+  background: #217e02 !important;
+  transition: all 0.3s;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 10px #0000005b;
+}
