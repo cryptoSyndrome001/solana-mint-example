@@ -7,8 +7,8 @@ import classes from './Example/Header/header.module.css'
 import { Snackbar } from "@material-ui/core"
 import Alert from "@material-ui/lab/Alert"
 import artworks from './Assets/example nft.jpg'
+import { Confetti } from './Components/Confetti'
 import { Loader } from './Components/Loader'
-
 
 import {
   CandyMachine,
@@ -68,6 +68,73 @@ const Home = (props: HomeProps) => {
     }
   }, [alertState])
 
+  const onMint = async () => {
+    setIsLoadingConfetti(false)
+    setIsProcessing(true)
+    try {
+
+      if (wallet && candyMachine?.program) {
+        const mintTxId = await mintOneToken(
+          candyMachine,
+          props.config,
+          wallet.publicKey,
+          props.treasury
+        )
+
+        const status = await awaitTransactionSignatureConfirmation(
+          mintTxId,
+          props.txTimeout,
+          props.connection,
+          'singleGossip',
+          false
+        )
+
+        if (!status?.err) {
+          setAlertState({
+            open: true,
+            message: 'Congratulations! Mint succeeded!',
+            severity: 'success',
+          })
+        } else {
+          setAlertState({
+            open: true,
+            message: 'Mint failed! Please try again!',
+            severity: 'error',
+          })
+        }
+      } else {
+        alert("Connect Wallet")
+      }
+    } catch (error: any) {
+      // TODO: blech:
+      let message = error.msg || 'Minting failed! Please try again!'
+      if (!error.msg) {
+        if (error.message.indexOf('0x138')) {
+        } else if (error.message.indexOf('0x137')) {
+          message = `SOLD OUT!`
+        } else if (error.message.indexOf('0x135')) {
+          message = `Insufficient funds to mint. Please fund your wallet.`
+        }
+      } else {
+        if (error.code === 311) {
+          message = `SOLD OUT!`
+          // setIsSoldOut(true)
+        } else if (error.code === 312) {
+          message = `Minting period hasn't started yet.`
+        }
+      }
+
+      setAlertState({
+        open: true,
+        message,
+        severity: 'error',
+      })
+    } finally {
+      setIsProcessing(false)
+      refreshCandyMachineState()
+    }
+  }
+
   useEffect(refreshCandyMachineState, [
     wallet,
     props.candyMachineId,
@@ -78,7 +145,7 @@ const Home = (props: HomeProps) => {
     <main>
 
       <Loader isActive={isProcessing} />
-
+      {isloadingConfetti ? <Confetti /> : ''}
 
       <header id='header'>
         <div
@@ -87,7 +154,7 @@ const Home = (props: HomeProps) => {
           <div className={classes.container}>
             <div className={classes.pandaHeadingDiv}>
               <h1 className={classes.heroTitle}>
-                <span>Citymine</span> is the first community built cryptocurrency mine.
+                <span>Example</span> is the first community built cryptocurrency mine.
               </h1>
               <p className={classes.heroContent}>
                 Giving power back to the people…
@@ -128,7 +195,7 @@ const Home = (props: HomeProps) => {
                   </ScrollAnimation>
                   <ScrollAnimation animateIn='fadeIn' animateOut='fadeIn'>
                     <p className="content-text">
-                      Citymine NFT’s will give you access to the private discord, monthly passive income, airdrops and presale to future projects. 100% of mined profits will be
+                      Example NFT’s will give you access to the private discord, monthly passive income, airdrops and presale to future projects. 100% of mined profits will be
                       sent to NFT holders, address monthly.
                     </p>
                   </ScrollAnimation>
@@ -148,7 +215,18 @@ const Home = (props: HomeProps) => {
       </div>
       <Roadmap />
       <Faq />
-
+      <Snackbar
+        open={alertState.open}
+        autoHideDuration={6000}
+        onClose={() => setAlertState({ ...alertState, open: false })}
+      >
+        <Alert
+          onClose={() => setAlertState({ ...alertState, open: false })}
+          severity={alertState.severity}
+        >
+          {alertState.message}
+        </Alert>
+      </Snackbar>
     </main >
   )
 }
